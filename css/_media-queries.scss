@@ -1,0 +1,82 @@
+
+/** md and up */
+@media (min-width: 992px) {
+	/** nav **/
+	#topnav {
+		height: $nav_height;
+		box-sizing: border-box;
+
+		.navbar-brand {
+			width: $toc_width;
+		}
+
+		ul {
+			padding-right: 5%;
+		}
+	}
+
+	/** toc **/
+	#toc {
+		padding-top: 1rem;
+		display: block;
+		background-color: #fff;
+		width: $toc_width;
+		position: fixed;
+		top: $nav_height; // change
+		font-size: $toc_font_size;
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		border-right: 1px solid $layout_border_color;
+
+
+		.tocify-item a {
+			padding: 0.4rem;
+			display: block;
+		}
+
+		#toc-heading {
+			font-weight: 600;
+			font-size: 120%;
+		}
+
+		#toc-heading, .tocify-item a {
+			padding-left: 1rem;
+		}
+
+		.active a {
+			background-color: $toc_active_bg;
+		}
+
+		// h3
+		.tocify-subheader a {
+			padding-left: 1.5rem;
+		}
+
+		// h4 
+		.tocify-subheader .tocify-subheader a{
+			padding-left: 2rem;
+		}
+
+		// h5 
+		.tocify-subheader .tocify-subheader .tocify-subheader a {
+			padding-left: 2.5rem;
+		}
+	}
+
+	/** post **/
+	#post-wrapper {
+		margin-left: $toc_width;
+		padding: 2rem 5%;
+	}
+
+	/** archive **/
+	#archive-toc {
+		width: $archive_toc_width * 1.5;
+	}
+
+	#archive-wrapper {
+		margin-left: $archive_toc_width * 1.5;
+	}
+}
+

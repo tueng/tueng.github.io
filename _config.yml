@@ -1,0 +1,39 @@
+title: "Tue Nguyen's Personal Website"
+author: "Tue Nguyen"
+author_full_name: "Nguyen Trong Tue"
+
+path: ""
+url: "tueng.github.io"
+
+
+#########################
+# Setting
+
+permalink: /:title.html
+markdown: kramdown
+
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  sass_dir: css
+  style: expanded
+  cache: false
+
+exclude:
+- README.md
+
+
+#########################
+# Nav
+nav:
+  - title: 'Home'
+    href:  '/'
+
+  - title: 'Blog'
+    href:  '/blog.html'
+
+
+

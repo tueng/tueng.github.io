@@ -1,0 +1,77 @@
+.archive-page h1 {
+	text-align: center;
+	font-weight: 600;
+}
+
+#archive-toc {
+	width: $archive_toc_width;
+	padding-top: 1rem;
+	display: block;
+	background-color: #fff;
+	position: fixed;
+	top: $nav_height; // change
+	font-size: $toc_font_size;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border-right: 1px solid $layout_border_color;
+
+	.tocify-item a {
+		padding: 0.4rem;
+		padding-right: 1rem;
+		display: block;
+		text-align: right;
+	}
+
+	.active a {
+		background-color: $toc_active_bg;
+	}
+
+	.tocify-subheader a {
+		padding-left: 1.5rem;
+	}
+}
+
+#archive-wrapper {
+	margin-left: $archive_toc_width;
+	padding: 2rem 2%;
+}
+
+#archive-inner {
+	border-radius: 1rem;
+	background-color: #fff;	
+	padding: 2rem;
+}
+
+
+.archive-group {
+	margin-bottom: 2rem;
+
+
+	.group-title {
+		border-bottom: 1px solid $border_color;
+		padding-bottom: .5rem;
+
+		// fixed header anchor solved
+		padding-top: $nav_height;
+		margin-top:-$nav_height;
+	}
+
+	.post-title {
+		display: block;
+		padding: 5px;
+	}
+
+	.post-title:hover {
+		background-color: $toc_active_bg;
+		cursor: pointer;
+		opacity: 1;
+	}
+
+
+	.post-date {
+		font-size: 90%;
+		display: inline-block;
+		color: $primary_color;
+	}
+}

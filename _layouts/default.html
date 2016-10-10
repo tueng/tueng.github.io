@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+{% include hosted/head.html %}
+
+<body>
+	<header id="header">
+		<!-- header -->
+		{% include header.html %}
+	</header>
+
+	<!-- main --> 
+	<section id="main">
+		{{ content }}
+	</section>
+
+	<!-- footer -->
+	<div id="footer">
+
+	</div>
+	{% include hosted/js-snipet.html %}
+</body>
+</html>

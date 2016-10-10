@@ -1,0 +1,38 @@
+.code-box, pre {
+	padding: 8px 12px;
+	margin-bottom: 14px;
+	background-color: #fff;
+	border: 1px solid $border_color;
+	border-radius: 4px;
+	font-family: $code_font_family;
+	font-size: $code_font_size;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.code-box, #post-content div[class^="language"] pre {
+	background-color: $code_bg;
+}
+
+.code-box p {
+	margin-bottom: 0;
+}
+
+.t-box {
+	@extend .code-box;
+	font-family: $font_family;
+}
+
+
+.simple-label {
+	font-weight: 600;
+	text-decoration: underline;
+	margin: 0 3px;
+	padding: 0;
+	display: inline-block;
+}
+
+.simple-label:hover {
+	text-decoration: none;
+}
+

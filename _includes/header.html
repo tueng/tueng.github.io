@@ -1,0 +1,20 @@
+{% assign nav = site.nav %}
+{% assign current = page.url | downcase | split: '/' %}
+
+<!-- top nav -->
+<div id="topnav-wrapper" class="container-fluid clearfix">
+	<nav id="topnav" class="navbar navbar-light navbar-fixed-top">
+		<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+			&#9776;
+		</button>
+		<div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+			<ul class="nav navbar-nav pull-sm-right">
+				{% for nav_item in site.nav %}
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ nav_item.href }}">{{ nav_item.title }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</nav>
+</div>

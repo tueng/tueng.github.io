@@ -1,0 +1,28 @@
+#toc, #post-wrapper {
+	box-sizing: border-box;
+}
+
+/*==========================
+*  POST
+===========================*/
+.single-post {
+	#post-title {
+		margin-bottom: 1rem;
+	}
+
+	#post-meta {
+		margin-bottom: 2rem;
+
+		.fa {
+			width: 22px;
+		}
+	}
+
+	#post-content {
+		h3, h4, h5 {
+			padding-top: 1rem;
+		}
+
+	}
+	
+}

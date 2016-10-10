@@ -1,0 +1,45 @@
+<!-- jQuery-->
+<script src="/lib/jquery-3.1.1/jquery.min.js"></script>
+<!-- jQuery UI Core-->
+<script src="/lib/tocify/jquery-ui-1.12.1-core.js"></script>
+<!-- Bootstrap JS -->
+<script src="/lib/bootstrap-4.0.0-alpha.4/js/bootstrap.min.js"></script>
+<!-- Tocify -->
+<script src="/lib/tocify/jquery.tocify.min.js"></script>
+
+<!-- Tocify executes -->
+
+{% if page.layout == 'post' %}
+<script type="text/javascript">
+	$(function() {
+		var toc = $("#toc").tocify({
+			context: "#post-content",
+			selectors: "h2,h3,h4,h5",
+			// show all heading
+			showAndHide: false,
+			// offset fixed header
+			scrollTo: 50,
+			// no url history
+			history: false,
+			extendPage: false
+		});
+	});
+</script>
+
+{% elsif page.layout == 'archive' %}
+<script type="text/javascript">
+	$(function() {
+		var toc = $("#archive-toc").tocify({
+			context: "#archive-content",
+			selectors: "h2",
+			// show all heading
+			showAndHide: false,
+			// offset fixed header
+			scrollTo: 50,
+			// no url history
+			history: false,
+			extendPage: false
+		});
+	});
+</script>
+{% endif %}

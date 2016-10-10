@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+
+<!-- table of contents -->
+<div class="single-post clearfix">
+	<!-- table of contents -->
+	<nav id="toc">
+		<p id="toc-heading">Table of contents</p>
+	</nav>
+
+	<!-- post -->
+	<section id="post-wrapper" class="t-layout-wrapper">
+		<div id="post-inner" class="t-layout-inner">
+			<!-- post title -->
+			<h1 id="post-title">
+				{{ page.title }}
+			</h1>
+
+			<!-- meta -->
+			<div id="post-meta" class="t-box">
+				<p id="post-author">
+					<i class="fa fa-user-secret"></i>
+					{{ site.author_full_name }}
+				</p>
+				<time id="post-date">
+					<i class="fa fa-calendar"></i>
+					{{ page.date | date: "%d %b %Y"}}
+				</time>
+
+
+				{% if page.categories %}
+				<!-- categories -->
+				<p class="post-categories">
+					<i class="fa fa-folder-open"></i>
+					<a href="/categories.html#category-{{ page.categories[0] | slugify }}" class="simple-label">
+						{{ page.categories[0] }}
+					</a>
+				</p>
+				{% endif %}
+
+
+				{% if page.tags %}
+				<!-- tags -->
+				<p class="post-tags">
+					<i class="fa fa-tags"></i>	
+					{% for tag in page.tags %}
+					<a href="/tags.html#tag-{{ tag | slugify }}" class="simple-label">
+						{{ tag }}
+					</a>
+					{% endfor %}
+				</p>
+				{% endif %}
+			</div>
+
+			<!-- post content -->
+			<article id="post-content" class="t-layout-content">
+				{{ content }}
+			</article>
+
+			<!-- comments -->
+			<div id="comments">
+				{% include comments.html %}
+			</div>
+		</div>
+	</section>
+</div>

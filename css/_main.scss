@@ -1,0 +1,64 @@
+/*==========================
+*  GENERAL
+===========================*/
+body {
+	padding-top: $nav_height - 1px;
+}
+
+/*==========================
+*  NAV
+===========================*/
+#topnav {
+	border-bottom: 1px solid $layout_border_color;
+	background-color: $nav_bg;
+	padding: 0;
+
+	a {
+		padding: 0 .5rem;
+		line-height: $nav_height - 1px;
+		height: $nav_height - 1px;
+		display: inline-block;
+		vertical-align: middle;
+		text-transform: uppercase;
+		color: #fff;
+	}
+}
+
+/*==========================
+*  TOC
+===========================*/
+#toc {
+	display: none;
+}
+
+
+/*==========================
+*  POST
+===========================*/
+#post-wrapper {
+	margin: .5rem;
+
+	#post-inner {
+		border-radius: 1rem;
+		background-color: #fff;	
+		padding: 2rem;
+	}
+}
+
+/*==========================
+*  POST LIST
+===========================*/
+#post-list {
+	margin-top: 2rem;
+}
+
+.post-brief {
+	padding: 2rem;
+	border-radius: 1rem;
+	background-color: #fff;
+	margin-bottom: 2rem;
+
+	.post-title {
+		margin-top: 0.5rem;
+	}
+}

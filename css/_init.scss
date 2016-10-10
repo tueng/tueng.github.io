@@ -1,0 +1,153 @@
+/* =====================
+*  elements 
+*  ===================== */
+/** Reset some basic elements */
+
+html {
+	font-size: $font_size;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { 
+	margin: 0; 
+	padding: 0; 
+}
+
+body { 
+	font-family: $font_family;
+	font-size: 1rem; 
+	line-height: $line_height;
+	font-weight: $primary_weight; 
+	color: $primary_color; 
+	background-color: $bg_color; 
+	-webkit-text-size-adjust: 100%;
+}
+
+/** Set `margin-bottom` to maintain vertical rhythm */
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; }
+
+/** Images */
+img { 
+	max-width: 100%; 
+	vertical-align: middle;
+	display: block;
+	height: auto;
+	margin: 0 auto;
+}
+
+/** Figures */
+figcaption { font-size: $font_size - 2px; }
+
+/** Lists */
+ul, ol { 
+	padding: 0;
+	margin-left: 0;
+}
+
+/*
+ul {
+	list-style-type: none;
+}
+
+*/
+
+article {
+	ul, ol {
+		margin-left: 30px;
+	}
+/*
+	ul {
+		list-style-type: disc;
+	}
+
+	ul ul, ol ul {
+		list-style-type: circle;
+	}
+
+	ul ul ul, ul ol ul, ol ul ul, ol ol ul {
+		list-style-type: square;
+	}
+	*/
+}
+
+li > ul, li > ol { margin-bottom: 0; }
+
+/** Headings */
+h1, h2, h3, h4, h5, h6 { 
+	font-weight: 400; 
+	margin-bottom: .5rem;
+	font-family: inherit;
+	line-height: 1.1;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	margin-top: 3rem;
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
+/** Links */
+a { 
+	color: $link_color; 
+	text-decoration: none; 
+}
+
+a:visited { 
+	color: $visited_color; 
+}
+
+a:hover { 
+	text-decoration: none; 
+	opacity: .8;
+}
+
+/** Blockquotes */
+blockquote { 
+	color: #828282; 
+	border-left: 4px solid #e8e8e8; 
+	padding-left: 15px; 
+	font-size: 18px; 
+	letter-spacing: -1px; 
+	font-style: italic;
+	font-size: $code_font_size;
+}
+
+blockquote > :last-child { 
+	margin-bottom: 0; 
+}
+
+/** Code formatting */
+pre > code { 
+	border: 0; 
+	padding-right: 0;
+	padding-left: 0;
+	font-size: $code_font_size;
+}
+
+code {
+	background-color: #eff0f1;
+	white-space: pre-wrap;
+	padding: 1px 5px;
+	color: $primary_color;
+}
+
+/** p **/
+p {
+	margin-bottom: 1rem;
+}
+
+b, strong {
+	font-weight: 600;
+}
+
+
+/** ul, ol **/
+#post-list > ul {
+	list-style-type: none;
+}
