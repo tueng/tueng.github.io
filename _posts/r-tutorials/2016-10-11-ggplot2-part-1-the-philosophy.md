@@ -104,6 +104,7 @@ And creating a plot in `ggplot2` (using layered GoG fashion) can be done as foll
     + one **theme**
 
 ## Examples
+
 ### Understanding the data
 We will create a scatter plot using the `diamonds` dataset that comes with `ggplot2` by default. First, we will load `ggplot2` into `R` and explore the dataset.
 
@@ -160,6 +161,7 @@ Some quick information about `diamonds`:
 **Goal** -- to build a **scatter** plot of `price` versus `carat` to see if there is a relationship between these variables.
 
 #### Step 1: Specification
+
 In this step, we will **describe** how we will create the plot. According to `ggplot2`'s philosophy, we need:
 
 1. A **layer** that has:

@@ -1,4 +1,4 @@
-servr_dir <- 'D:/github/tueng.github.io/'
+servr_dir <- 'D:/github/tueng.github.io'
 servr_command <- 'jekyll build'
 servr_input_dir <- c(
   #'_rmd/statistics'
