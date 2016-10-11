@@ -6,7 +6,7 @@ date: "October 11, 2016"
 output: html_document
 category: "R tutorials"
 tags: ["ggplot2"]
-thumb: '161011-ggplot2-geoms.png'
+thumb: '161011-ggplot2-geom-point.png'
 ---
 
 ```{r global_options, echo=FALSE}
