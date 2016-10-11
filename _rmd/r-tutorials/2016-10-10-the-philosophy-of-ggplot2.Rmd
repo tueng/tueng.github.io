@@ -3,10 +3,10 @@ title: "The philosophy of ggplot2"
 output: html_document
 author: "Tue Nguyen"
 layout: "post"
-date: "October 11, 2016"
+date: "October 10, 2016"
 category: "R tutorials"
 tags: ["ggplot2", "grammar of graphics"]
-thumb: '161011-ggplot2-philosophy.png'
+thumb: '161010-ggplot2-philosophy.png'
 ---
 
 ```{r global_options, echo=FALSE}
