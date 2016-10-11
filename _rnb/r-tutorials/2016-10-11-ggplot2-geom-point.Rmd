@@ -13,15 +13,10 @@ thumb: '161011-ggplot2-geoms.png'
 knitr::opts_chunk$set(fig.width=12, fig.height=6, fig.retina = 3)
 ```
 
-## Requirements
-- Package: `ggplot2`
-- Dataset: `diamonds`, `economics`, `mpg`
-- Assumptions:
-    + You will explore the datasets by yourself.
-
 ## Basic info
-- **Function** -- draws a point using an x and a y coordinate
-- **Usage** -- to create scatter plots
+- **Usage**:
+    + draws a point using an x and a y coordinate
+    + often used to create scatter plots
 - Default **stat** -- `identity` (no statistical tranformation)
 - Default **position** -- `identity` (no position adjustment)
 - Possible **aesthetics**:
@@ -37,7 +32,15 @@ knitr::opts_chunk$set(fig.width=12, fig.height=6, fig.retina = 3)
 - Other **params**
     + `na.rm` -- whether to suppress warnings when removing points with NA coordinates (default: `FALSE` -- show warnings)
 
+## Requirements
+- Package: `ggplot2`
+
 ## Examples
+```{r, echo=FALSE}
+library(ggplot2)
+```
+
+
 ### 1. Create a basic scatter plot
 - **Dataset**: `mpg`
 - **Variables** of interest:

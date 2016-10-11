@@ -11,15 +11,10 @@ thumb: '161011-ggplot2-geom-point.png'
 
 
 
-## Requirements
-- Package: `ggplot2`
-- Dataset: `diamonds`, `economics`, `mpg`
-- Assumptions:
-    + You will explore the datasets by yourself.
-
 ## Basic info
-- **Function** -- draws a point using an x and a y coordinate
-- **Usage** -- to create scatter plots
+- **Usage**:
+    + draws a point using an x and a y coordinate
+    + often used to create scatter plots
 - Default **stat** -- `identity` (no statistical tranformation)
 - Default **position** -- `identity` (no position adjustment)
 - Possible **aesthetics**:
@@ -34,6 +29,9 @@ thumb: '161011-ggplot2-geom-point.png'
 
 - Other **params**
     + `na.rm` -- whether to suppress warnings when removing points with NA coordinates (default: `FALSE` -- show warnings)
+
+## Requirements
+- Package: `ggplot2`
 
 ## Examples
 
