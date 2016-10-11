@@ -1,17 +1,15 @@
 ---
-layout: "post"
-title: "ggplot2 - The philosophy"
-author: "Tue Nguyen"
-date: "October 11, 2016"
+title: "The philosophy of ggplot2"
 output: html_document
+author: "Tue Nguyen"
+layout: "post"
+date: "October 11, 2016"
 category: "R tutorials"
 tags: ["ggplot2", "grammar of graphics"]
 thumb: '161011-ggplot2-philosophy.png'
 ---
 
-```{r global_options, echo=FALSE}
-knitr::opts_chunk$set(fig.width=12, fig.height=6, fig.retina = 3)
-```
+
 
 In this tutorial, we will learn about `ggplot2` and the logic behind it. We will start with some background information such as what is `ggplot2`, why we should use it, and in which situations it is not suitable. Then we will learn a bit about the idea of **grammar of graphics** (GoG), why this approach is better than the tradional ones, and how it is actually implemented in `ggplot2`. 
 
@@ -111,15 +109,42 @@ And creating a plot in `ggplot2` (using layered GoG fashion) can be done as foll
 ### Understanding the data
 We will create a scatter plot using the `diamonds` dataset that comes with `ggplot2` by default. First, we will load `ggplot2` into `R` and explore the dataset.
 
-```{r}
+
+```r
 # load ggplot2
 library(ggplot2)
 
 # view the structure of diamonds dataset
 str(diamonds)
+```
 
+```
+## Classes 'tbl_df', 'tbl' and 'data.frame':	53940 obs. of  10 variables:
+##  $ carat  : num  0.23 0.21 0.23 0.29 0.31 0.24 0.24 0.26 0.22 0.23 ...
+##  $ cut    : Ord.factor w/ 5 levels "Fair"<"Good"<..: 5 4 2 4 2 3 3 3 1 3 ...
+##  $ color  : Ord.factor w/ 7 levels "D"<"E"<"F"<"G"<..: 2 2 2 6 7 7 6 5 2 5 ...
+##  $ clarity: Ord.factor w/ 8 levels "I1"<"SI2"<"SI1"<..: 2 3 5 4 2 6 7 3 4 5 ...
+##  $ depth  : num  61.5 59.8 56.9 62.4 63.3 62.8 62.3 61.9 65.1 59.4 ...
+##  $ table  : num  55 61 65 58 58 57 57 55 61 61 ...
+##  $ price  : int  326 326 327 334 335 336 336 337 337 338 ...
+##  $ x      : num  3.95 3.89 4.05 4.2 4.34 3.94 3.95 4.07 3.87 4 ...
+##  $ y      : num  3.98 3.84 4.07 4.23 4.35 3.96 3.98 4.11 3.78 4.05 ...
+##  $ z      : num  2.43 2.31 2.31 2.63 2.75 2.48 2.47 2.53 2.49 2.39 ...
+```
+
+```r
 # view some first rows of the dataset
 head(diamonds)
+```
+
+```
+##   carat       cut color clarity depth table price    x    y    z
+## 1  0.23     Ideal     E     SI2  61.5    55   326 3.95 3.98 2.43
+## 2  0.21   Premium     E     SI1  59.8    61   326 3.89 3.84 2.31
+## 3  0.23      Good     E     VS1  56.9    65   327 4.05 4.07 2.31
+## 4  0.29   Premium     I     VS2  62.4    58   334 4.20 4.23 2.63
+## 5  0.31      Good     J     SI2  63.3    58   335 4.34 4.35 2.75
+## 6  0.24 Very Good     J    VVS2  62.8    57   336 3.94 3.96 2.48
 ```
 
 Some quick information about `diamonds`:
@@ -161,7 +186,8 @@ In this step, we will **describe** how we will create the plot. According to `gg
 #### Step 2: Implementation
 Now, it's time to **implement** what we've described above to actually generate a plot. 
 
-```{r}
+
+```r
 # CREATE an (empty) plot
 ggplot() +
   
@@ -188,6 +214,8 @@ ggplot() +
   theme_grey()
 ```
 
+<img src="/figure/rmd/r-tutorials/2016-10-10-the-philosophy-of-ggplot2/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="864" />
+
 ### Improvement
 The code chunk above is too "verbose" for a simple task. However, if we have some basic understanding of how `ggplot2` works, we'll be able to produce the same result with much shorter code.
 
@@ -199,7 +227,8 @@ The code chunk above is too "verbose" for a simple task. However, if we have som
 
 And the following code chunk just creates the same scatter plot.
 
-```{r, eval=FALSE}
+
+```r
 ggplot() +
   
   layer(data = diamonds,
@@ -212,7 +241,8 @@ ggplot() +
 #### A more compact way - using wrappers
 Instead of calling `layer()` to build a layer, we can use wrapper functions (or **wrappers** for short). For example, if we want to build a layer displaying points, we can use `geom_point()` function as shown in the example bellow.
 
-```{r, eval=FALSE}
+
+```r
 ggplot() +
   geom_point(data = diamonds,
              mapping = aes(x = carat, y = price))
@@ -229,7 +259,8 @@ There is a wrapper for every geom type such as `geom_point()`, `geom_line()`, or
 #### Multiple layers -- the use of default data and mappings
 Now, suppose we want to fit a regression line to the the scatter plot. We can do it easily by adding another layer to the plot. The wrapper to create a layer for a regression line / curve is `geom_smooth()`, which uses `loess` as the default method. Since we want a regression **line**, not a curve, we will change the method to `lm` (which means **linear model**). Here is the code.
 
-```{r}
+
+```r
 ggplot() +
   # layer displaying the scatter plot
   geom_point(data = diamonds,
@@ -239,23 +270,25 @@ ggplot() +
   geom_smooth(data = diamonds,
               mapping = aes(x = carat, y = price),
               method = 'lm')
-
 ```
+
+<img src="/figure/rmd/r-tutorials/2016-10-10-the-philosophy-of-ggplot2/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="864" />
 
 You may notice a problem with the code chunk above -- **_the data and aesthetic mappings are completely the same in both layers_**. Luckily, `ggplot2` allows us to set them as default values to be used across multiple layers. What we need to do is to pass them to `ggplot()` instead of passing them to each wrapper.
 
-```{r, eval=FALSE}
+
+```r
 ggplot(data = diamonds,
        mapping = aes(x = carat, y = price)) +
   geom_point() +
   geom_smooth(method = 'lm')
-  
 ```
 
 #### Can it be even more compact? -- Well, yes!
 How about this?
 
-```{r, eval=FALSE}
+
+```r
 ggplot(diamonds, aes(carat, price)) +
   geom_point() +
   geom_smooth(method = 'lm')
@@ -307,20 +340,6 @@ Following 3 steps:
 ## References
 1. Hadley Wickham. 2010. _A layered grammar of graphics_. Journal of Computational and Graphical Statistics.
 [ [link](http://vita.had.co.nz/papers/layered-grammar.pdf) ]
-
 2. Hadley Wickham. 2016. _ggplot2: Elegant graphics for data analysis_. 2nd edition.  New York (NY): Springer.
-
 3. Hadley Wickham, Winston Chang. 2016. _ggplot2 documentation, version 2.1.0_.
 [ [link](http://docs.ggplot2.org/current/) ]
-
-## Further readings
-The following is the list of related articles on `ggplot2`. If you don't see a link at the end of a article title, it means the article has not been published. Maybe I am working on it, or maybe I haven't even started it yet; but I will soon. I hope you find my tutorials useful.
-
-- ggplot2 - Part 2: Creating common types of plots.
-- ggplot2 - Part 3: Data and aesthetic mappings.
-- ggplot2 - Part 4: Geoms and stats.
-- ggplot2 - Part 5: Position adjustment.
-- ggplot2 - Part 6: Scales.
-- ggplot2 - Part 7: Coordinate systems.
-- ggplot2 - Part 8: Faceting.
-- ggplot2 - Part 9: Theming.
