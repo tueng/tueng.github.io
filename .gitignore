@@ -1,2 +1,5 @@
 _site/
 .sass-cache/
+
+_rmd/data/
+_rmd/make.R
