@@ -115,7 +115,8 @@ ggplot(mpg, aes(cty, hwy,
 
 ```{r, eval=FALSE}
 ggplot(mpg, aes(cty, hwy, 
-                shape = drv)) + # mapping for shape aesthetic
+                # mapping for shape aesthetic
+                shape = drv)) + 
   geom_point()
 ```
 
