@@ -15,9 +15,9 @@ thumb: '161011-ggplot2-scatter-plots.png'
 
 ## Learning outcomes
 - Learn how to build a simple scatter plot
-- Learn how to tailor the plot with aesthetics (color, shape, size, etc.)
+- Learn how to tailor a plot with aesthetics (color, shape, size, etc.)
 - Distinguish between mapping an aesthetic to a variable and setting it to a constant value
-- Understand why we want to map aesthetics to variable
+- Understand why we want to map aesthetics to variables
 - Learn which aesthetics are suitable for which types of data
 - Learn how to fit a regression line to a scatter plot
 
@@ -55,19 +55,20 @@ ggplot(mpg, aes(displ, cty)) +
 ### 2. Mappings vs. setting
 We need to distinguish between **maping** an aesthetic to a variable and **setting** it to a constant value.
 
+- **mapping**:
+    + observations are displayed differently depending on the values of the variable that the aesthetic is mapped to
+    + done inside `aes()`
+    + use when you want to **group** observations by some attribute (variable), for example, group cars by type of drivetrain. 
+
 - **setting**:
     + all obersvations will be displayed the same
     + done outside `aes()`
     + used when you want to change the appearance only
-- **mapping**:
-    + observations displayed differently depending on the values of the variable that the aesthetic is mapped to
-    + done inside `aes()`
-    + use when you want to **group** observations by some attribute (variable), for example, group cars by type of drivetrain. 
 
 To be clearer about this, see the examples in the following sections.
 
 ### 3. Mapping and setting color
-1. Here is how to **map** `color` to a variable
+- Here is how to **map** `color` to a variable
     + **Goal**: display points using different colors based on `drv` (drivetrain type)
     + **Solution**: map `color` aesthetic to `drv` by specifying it inside `aes()`
     
@@ -79,7 +80,7 @@ ggplot(mpg, aes(displ, cty)) +
 
 <img src="/figure/rmd/r-tutorials/2016-10-11-building-scatter-plots-with-ggplot2/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="864" />
 
-2. And here is how to **set** `color` to a fixed value
+- And here is how to **set** `color` to a fixed value
     + **Goal**: display all points in **blue**
     + **Solution**: set `color` to "blue" by passing it to `geom_point()`. Do not put it inside `aes()`
     
@@ -91,14 +92,14 @@ ggplot(mpg, aes(displ, cty)) +
 
 <img src="/figure/rmd/r-tutorials/2016-10-11-building-scatter-plots-with-ggplot2/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="864" />
 
-3. **Notes**:
+- **Notes**:
     + `geom_xxx()` functions take the first argument as `mapping`, so we don't need `mapping =`
     + we can specify `color` in the default mappings. However, be careful if we have multiple layers because the default values are used by all layers.
 
 ### 4. Mapping and setting shape
 Mapping or setting `shape` is accompished in the same way we have done with `color`
 
-1. Mapping `shape` to a variable
+- Mapping `shape` to a variable
     + **Goal**: display points using diffrent shapes based on `drv`
     + **Solution**: map `shape` aesthetic to `drv` using `aes()`
 
@@ -111,7 +112,7 @@ ggplot(mpg, aes(displ, cty)) +
 <img src="/figure/rmd/r-tutorials/2016-10-11-building-scatter-plots-with-ggplot2/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="864" />
     
 
-2. Setting `shape` to a fixed value
+- Setting `shape` to a fixed value
     + **Goal**: display points as **squares** instead of **dots**
     + **Solution**: set `shape` to the corresponding code
         + each shape is coded by one integer from 1 to 25; for example: (filled) square = 15 
@@ -126,7 +127,7 @@ ggplot(mpg, aes(displ, cty)) +
 <img src="/figure/rmd/r-tutorials/2016-10-11-building-scatter-plots-with-ggplot2/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="864" />
     
 ### 5. Mapping and setting size
-1. Mapping `size` to a variable
+- Mapping `size` to a variable
     + **Goal**: using larger points to display cars that have more number of cylinders
     + **Solution**: map `size` aesthetic to `cyl` using `aes()`
     + **Note**: we also map `color` to `drv` so that we can also observe other interesting patterns
@@ -141,7 +142,7 @@ ggplot(mpg, aes(displ, cty)) +
 <img src="/figure/rmd/r-tutorials/2016-10-11-building-scatter-plots-with-ggplot2/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="864" />
     
 
-2. Setting `size` to a fixed value
+- Setting `size` to a fixed value
     + **Goal**: display all points with the same size, but a bit bigger than the default value (default size = 1.5)
     + **Solution**: set `size` to a number
 
@@ -153,8 +154,8 @@ ggplot(mpg, aes(displ, cty)) +
 <img src="/figure/rmd/r-tutorials/2016-10-11-building-scatter-plots-with-ggplot2/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="864" />
 
 ### 6. Mapping and setting transparency
-1. Mapping transparency to a variable
-    + **Goal**: display points that have more number of cylinders bigger and with higher transparency
+- Mapping transparency to a variable
+    + **Goal**: display points that have more number of cylinders bigger and more transparent 
     + **Solution**: 
         + map `size` to `cyl`
         + map `alpha` to `1 / cyl`
@@ -168,11 +169,11 @@ ggplot(mpg, aes(displ, cty)) +
 
 <img src="/figure/rmd/r-tutorials/2016-10-11-building-scatter-plots-with-ggplot2/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="864" />
 
-2. Setting transparency to a fixed value
+- Setting transparency to a fixed value
     + **Goal**: display all points with 50% transparency
     + **Solution**: set `alpha = 0.5`
-        + alpha = 1: completely opaque
-        + alpha = 0: completely transparent
+        + `alpha = 1`: completely opaque
+        + `alpha = 0`: completely transparent
     
 
 ```r
@@ -189,8 +190,8 @@ ggplot(mpg, aes(displ, cty)) +
     + `color`, `shape`: works well with **categorical** variables
     + `size`: works well with **continuous** variables
 - `color` is sometimes useful when using with continuous variables
-- `shape` will not work well with a variable that have too many levels (more than 5)
-- Keep it simple, don't use too many aesthetics in a plot -- it's hard to see the relationships simultaneously among shape, color, and size.
+- `shape` will not work well with a variable that has too many levels (more than 5)
+- Keep it simple, don't use too many aesthetics in a plot -- it's hard to see the relationships simultaneously among shape, color, and size
 
 ### 8. Adding a regression line
 - **Goal**: add a fitted regression line to the scatter plot
@@ -245,3 +246,7 @@ Here are the key points to take home:
     + use facetting
     + build separate plots
 - We can add a regression line to a scatter plot by adding another layer using `stat_smooth()`
+
+## References
+1. Hadley Wickham. 2016. _ggplot2: Elegant graphics for data analysis_. 2nd edition.  New York (NY): Springer.
+2. Winston Chang. 2013. _R graphics Cookbook_. 1st edition. Sebastopol, CA:  O'Reilly Media, Inc.
