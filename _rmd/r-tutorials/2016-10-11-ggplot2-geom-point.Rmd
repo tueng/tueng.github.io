@@ -5,7 +5,7 @@ author: "Tue Nguyen"
 date: "October 11, 2016"
 output: html_document
 category: "R tutorials"
-tags: ["ggplot2", "grammar of graphics"]
+tags: ["ggplot2"]
 thumb: '161011-ggplot2-geoms.png'
 ---
 
@@ -38,6 +38,11 @@ knitr::opts_chunk$set(fig.width=12, fig.height=6, fig.retina = 3)
     + `na.rm` -- whether to suppress warnings when removing points with NA coordinates (default: `FALSE` -- show warnings)
 
 ## Examples
+```{r, echo=FALSE}
+library(ggplot2)
+```
+
+
 ### 1. Create a basic scatter plot
 - **Dataset**: `mpg`
 - **Variables** of interest:

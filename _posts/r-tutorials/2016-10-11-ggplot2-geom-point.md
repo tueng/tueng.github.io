@@ -5,8 +5,8 @@ author: "Tue Nguyen"
 date: "October 11, 2016"
 output: html_document
 category: "R tutorials"
-tags: ["ggplot2", "grammar of graphics"]
-thumb: '161011-ggplot2-geoms.png'
+tags: ["ggplot2"]
+thumb: '161011-ggplot2-geom-point.png'
 ---
 
 
@@ -36,6 +36,9 @@ thumb: '161011-ggplot2-geoms.png'
     + `na.rm` -- whether to suppress warnings when removing points with NA coordinates (default: `FALSE` -- show warnings)
 
 ## Examples
+
+
+
 ### 1. Create a basic scatter plot
 - **Dataset**: `mpg`
 - **Variables** of interest:
@@ -46,10 +49,7 @@ thumb: '161011-ggplot2-geoms.png'
     + final result should look like the figure below
     
 
-
-```
-## Error in eval(expr, envir, enclos): could not find function "ggplot"
-```
+<img src="/figure/rmd/r-tutorials/2016-10-11-ggplot2-geom-point/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="864" />
 
 - **Solution**:
 
@@ -70,10 +70,7 @@ ggplot(mpg, aes(cty, hwy)) +
     + color the points by `manufacturer`
     + final result should look like the figure below
 
-
-```
-## Error in eval(expr, envir, enclos): could not find function "ggplot"
-```
+<img src="/figure/rmd/r-tutorials/2016-10-11-ggplot2-geom-point/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="864" />
 
 - **Solution**:
 
@@ -100,10 +97,7 @@ ggplot(mpg, aes(cty, hwy,
     + use different point shapes for different types of `drv`
     + final result should look like the figure below
 
-
-```
-## Error in eval(expr, envir, enclos): could not find function "ggplot"
-```
+<img src="/figure/rmd/r-tutorials/2016-10-11-ggplot2-geom-point/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="864" />
 
 - **Solution**:
 
@@ -125,10 +119,7 @@ ggplot(mpg, aes(cty, hwy,
     + use larger points for cars that have higher `displ`
     + final result should look like the figure below
 
-
-```
-## Error in eval(expr, envir, enclos): could not find function "ggplot"
-```
+<img src="/figure/rmd/r-tutorials/2016-10-11-ggplot2-geom-point/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="864" />
 
 - **Solution**:
 
